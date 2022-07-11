@@ -1,0 +1,8 @@
+{
+    "userModels": [
+    {"name":"홍길동","mobile":"010-3049-5485","email":"hong@test.com"},
+    {"name":"이순신","mobile":"010-3902-9560","email":"sslee@dhte.com"},
+    {"name":"김철수","mobile":"010-6969-4393","email":"cslim@gkfd.com"},
+    {"name":"안중근","mobile":"010-1094-0939","email":"jka@kskdjf.com"}
+    ]
+}
