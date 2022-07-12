@@ -30,8 +30,7 @@ export const usersSlice = createSlice({
         }
     }
     })
-    export const { usersRequest, usersSuccess, usersFailure,
-        } = usersSlice.actions;
+    export const { usersRequest, usersSuccess, usersFailure, } = usersSlice.actions;
     const {reducer, actions} = usersSlice
     export const usersActions = actions
     export default reducer;

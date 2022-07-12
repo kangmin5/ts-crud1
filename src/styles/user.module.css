@@ -15,7 +15,7 @@
     justify-content: center;
     border: 1px solid rgb(225, 224, 226);
 }
-.ul{
+.ul1{
     width:40vw;
     list-style: none;
     display: flex;
@@ -26,22 +26,25 @@
     color: yellow;
     border-radius: 0.5rem 0.5rem 0 0 ;
 }
-.ul1{
+.ul2{
+    width:40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.li{
     width:40vw;
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
+    justify-content: space-between;
+    flex-direction: column;
     padding: 0.5rem;
 
 }
-.ul1:hover {
+.li:hover {
     background-color: rgb(197, 187, 187);
     cursor: pointer;
 
-}
-.ul1 > li{
-
-    margin: -0.2rem;
 }
