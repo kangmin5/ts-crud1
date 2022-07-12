@@ -1,22 +1,19 @@
 
+import { Iuser } from 'modules/interfaces/Interface'
 import React, { FC } from 'react'
 import { useSelector } from 'react-redux'
 import styles from 'styles/user.module.css'
 
 
-const UserItem: FC = () => {
-  const {usersList} =  useSelector((state:any)=>({...state.data}))
+const UserItem:FC<{users:Iuser[]}> = (props) => {
+
   return (
     <div >
-        {usersList.map((user: { name: boolean | React.Key | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | null | undefined; mobile: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; email: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined }) =>  (
-            // eslint-disable-next-line react/jsx-key
-            <ul className={styles.ul1} >
-                <li >{user.name}</li>
-                <li>{user.mobile}</li>
-                <li>{user.email}</li>
-            </ul>
-            )
-        )}
+      <ul className={styles.ul1} >
+        {props.users.map((users,idx) => (
+            <li key={idx}>{users.name}</li>
+        ))}
+      </ul>
     </div>
   )
 }
