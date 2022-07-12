@@ -1,33 +1,24 @@
-import { userListApi } from 'modules/apis/userApi'
 import { Iuser } from 'modules/interfaces/Interface'
-import { usersActions, UsersState } from 'modules/slices/usersSlice'
+import { usersActions } from 'modules/slices/usersSlice'
 import { useAppSelector } from 'modules/store'
-import { type } from 'os'
 import React, { FC, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styles from 'styles/user.module.css'
 
 export interface Tuser {
-    
     name: string,
     email: string,
     mobile: string
-    
-}
-
+} 
 const UserList: FC = () => {
+
     const userlist = useAppSelector((state) => (state.rootReducer.users))
     console.log('.......>>>>>',userlist)
     const [users, setUsers] = useState<Array<Iuser>>([])
 
     useEffect(() => {
-         const t = [
-            {"name":"홍길동","mobile":"010-3049-5485","email":"hong@test.com"},
-            {"name":"이순신","mobile":"010-3902-9560","email":"sslee@dhte.com"},
-            {"name":"김철수","mobile":"010-6969-4393","email":"cslim@gkfd.com"},
-            {"name":"안중근","mobile":"010-1094-0939","email":"jka@kskdjf.com"}
-            ]
-         setUsers(t)
+
+         setUsers(userlist)
      }, [userlist])
     
     console.log(`setUser` + JSON.stringify(users))
@@ -44,7 +35,7 @@ const UserList: FC = () => {
             </ul>
              <ul className={styles.ul2} >
                {users.map((user :  Iuser) =>
-                   <li className={styles.li} key={user.name}>{user.name}{user.mobile}{user.email}</li>
+                   <li className={styles.li} key={user.name}> {user.name}{user.mobile}{user.email}</li>
                    
                )}
             </ul>
@@ -54,3 +45,11 @@ const UserList: FC = () => {
 }
 
 export default UserList
+
+function useAppDispatch() {
+    throw new Error('Function not implemented.')
+}
+function AppDispatch(arg0: { payload: undefined; type: string }) {
+    throw new Error('Function not implemented.')
+}
+

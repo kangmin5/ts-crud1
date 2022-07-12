@@ -21,7 +21,7 @@ export const usersSlice = createSlice({
             console.log(`진행 2 : usersSuccess 성공 ${JSON.stringify(state)} `)
             state.status = 'idle'
             state.data = [...state.data, payload]
-            console.log(`서버 payload: ${JSON.stringify(state.data)}`)
+            console.log(`서버 payload>>>: ${JSON.stringify(state.data)}`)
         },
         usersFailure(state: UsersState, { payload }) {
             console.log(`진행 2 : usersSuccess 실패 ${JSON.stringify(state)} `)

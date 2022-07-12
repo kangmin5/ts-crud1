@@ -4,7 +4,7 @@ import createSagaMiddleware from "redux-saga";
 import logger from 'redux-logger'
 import usersReducer  from "./slices/usersSlice";
 import rootSaga from "./sagas";
-import { TypedUseSelectorHook, useSelector } from "react-redux";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 const isDev = process.env.NODE_ENV === 'development'
 const sagaMiddleware = createSagaMiddleware()
@@ -42,6 +42,7 @@ const makestore = () => {
 const store = makestore();
 export type AppState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector;
 export const wrapper = createWrapper(makestore, {debug: isDev}) 
 export default store;
